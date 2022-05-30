@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order information</title>
+</head>
+<body>
+<h2 style="font-style:italic; text-align:center">Order information</h2>
+<h2 style = "text-align:right"><input type="button" onclick="history.back();" value="back"/></h2>
+<ul>
+	<li>order_uid: {{.OrderUid}}&nbsp;</li>
+	<li>track_number: {{.TrackNumber}}&nbsp;</li>
+	<li>entry: {{.Entry}}</li>
+	<li>delivery: 
+		<ul>
+			<li>name: {{.Delivery.Name}}</li>
+			<li>phone: {{.Delivery.Phone}}</li>
+			<li>zip: {{.Delivery.Zip}}</li>
+			<li>city: {{.Delivery.City}}</li>
+			<li>address: {{.Delivery.Address}}</li>
+			<li>region: {{.Delivery.Region}}</li>
+			<li>email: {{.Delivery.Email}}</li>
+		</ul>
+	</li>
+	<li>payment: 
+		<ul>
+			<li>transaction: {{.Payment.Transaction}}</li>
+			<li>request_id:{{.Payment.RequestId}}</li>
+			<li>currency:{{.Payment.Currency}}</li>
+			<li>provider:{{.Payment.Provider}}</li>
+			<li>amount: {{.Payment.Amount}}</li>
+			<li>payment_dt: {{.Payment.PaymentDt}}</li>
+			<li>bank: {{.Payment.Bank}}&nbsp;</li>
+			<li>delivery_cost:{{.Payment.DeliveryCost}}</li>
+			<li>goods_total:{{.Payment.GoodsTotal}}</li>
+			<li>custom_fee:{{.Payment.CustomFee}}</li>
+		</ul>
+	</li>
+	<li>items:
+		<ul>
+			{{range .Items}}
+			
+			<li>chrt_id: {{.ChrtId}}</li>
+			<li>track_number:{{.TrackNumber}}</li>
+			<li>price:{{.Price}}</li>
+			<li>rid:{{.Rid}}</li>
+			<li>name: {{.Name}}</li>
+			<li>sale: {{.Sale}}</li>
+			<li>size: {{.Size}}&nbsp;</li>
+			<li>total_price:{{.TotalPrice}}</li>
+			<li>nm_id:{{.NmId}}</li>
+			<li>brand:{{.Brand}}</li>
+			<li>status:{{.Status}}</li>
+			<p>&nbsp</p>
+			{{end}}
+		</ul>
+	</li>
+	<li>locale: {{.Locale}}</li>
+	<li>internal_signature: {{.InternalSignature}}</li>
+	<li>customer_id: {{.CustomerId}}</li>
+	<li>delivery_service: {{.DeliveryService}}</li>
+	<li>shardkey: {{.Shardkey}}</li>
+	<li>sm_id: {{.SmId}}</li>
+	<li>date_created: {{.DateCreated}}</li>
+	<li>oof_shard: {{.OofShard}}&nbsp;</li>
+</ul>
+</body>
+</html>
