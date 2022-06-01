@@ -4,7 +4,7 @@ import (
 	"NatsStreamingServer/MainServer/nats"
 )
 
-const url = "postgres://gorge:Liza110909.@localhost:5432/gorge"
+const url = "postgres://gorge:..."
 
 func main() {
 	ex := nats.Nats {
